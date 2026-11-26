@@ -14,12 +14,6 @@ except (KeyError, FileNotFoundError):
   st.error('GROQ_API_KEY is missing. Add it to Streamlit Cloud -> App setting secrets')
   st.stop()
 
-import streamlit as st
-from groq import Groq
-
-client = Groq(api_key=st.secrets["GROQ_API_KEY"])
-
-st.title("AI Interview Assistant")
 
 role = st.selectbox("Select Job Role",[
   "Python Developer",
@@ -31,7 +25,7 @@ role = st.selectbox("Select Job Role",[
 
 if st.button("Generate Interview Questions"):
 
-  prompt = "Generate 6 interview questions for the role of" +role
+  prompt = "Generate 5 interview questions for the role of" +role
 
   response = client.chat.completions.create(
      model="openai/gpt-oss-120b",
