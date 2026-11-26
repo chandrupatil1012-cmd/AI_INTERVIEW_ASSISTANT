@@ -1,5 +1,5 @@
 import streamlit as st
-from groq importGroq
+from groq import Groq
 
 st.set_page_cofig(page_title='AI INTERVIEW ASSISTANT', layout='centered')
 st.title('AI INTERVIEW ASSISTANT')
